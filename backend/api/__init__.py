@@ -24,3 +24,4 @@ CORS(app)
 # Import and register routes
 from api.routes.user_routes import user_bp
 app.register_blueprint(user_bp, url_prefix='/api/users')
+
