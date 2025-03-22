@@ -1,12 +1,12 @@
 # Use Python base image, a read-only template, install this. 
-FROM python:3
+FROM python:3.13-slim
 
 # Set the working directory inside the created image
 WORKDIR /app
 
-ENV FLASK_APP=app.py
+ENV FLASK_APP=app.py \
+    FLASK_ENV=development
 
-ENV FLASK_ENV=development
 # Copy project files
 COPY ./requirements.txt .
 

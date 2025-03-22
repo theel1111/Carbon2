@@ -1,10 +1,8 @@
-FROM node:14-slim
+FROM node:23-alpine
 
-#why is it user dir
-WORKDIR /user/src/app
+WORKDIR /app
 
-# COPY . /package-lock.json ./
-COPY . /package.json ./
+COPY package.json ./
 
 RUN npm install
 

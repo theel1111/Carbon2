@@ -1,5 +1,3 @@
-version: "3.9"
-
 #containers that we have
 services: 
   backend:
