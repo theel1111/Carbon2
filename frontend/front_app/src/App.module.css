@@ -1,0 +1,150 @@
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  height: 100vh;
+  background-color: #D7D2CC;
+  border: 10px solid #F7F3F0;
+  clip-path: inset(10px round 10px); /* 裁剪內側圓角 */
+  border-radius: 10px;
+}
+
+.login-page h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.login-page form {
+  display: flex;
+  flex-direction: column;
+  background-color: #F5F2ED;
+  width: 300px;
+  padding: 20px;
+}
+
+.login-page input {
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  font-size: 16px;
+  border: 1px solid #b6baba;
+  border-radius: 5px;
+  box-sizing: border-box; /* 確保內邊距和邊框包含在寬度內 */
+}
+
+.login-page-button {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  background-color: #007D7D;
+  color: white;
+  border: 1px solid #b6baba;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.google-login-button {
+  display: flex;
+  align-items: center; /* 垂直方向居中對齊 */
+  justify-content: center; /* 水平方向居中對齊 */
+  padding: 10px;
+  font-size: 16px;
+  height: 36px;
+  width: 100%;
+  background-color: white;
+  color: #007D7D;
+  border: 1px solid #007D7D;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  height: 20px;
+  width: 20px;
+}
+
+.text {
+  font-size: 10px;
+  margin-top: 1px;
+  font-weight: 700;
+  color: #959898;
+}
+
+.welcome-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+}
+
+label {
+  display: flex; /* 確保文字和勾選框在同一行 */
+  align-items: center; /* 垂直方向居中對齊 */
+}
+
+.flex-container {
+  display: flex; /* 啟用 Flexbox */
+  justify-content: space-between; /* 讓子元素兩端對齊 */
+  align-items: center; /* 垂直方向居中對齊 */
+  margin-top: 10px; /* 添加適當的上方間距 */
+}
+
+
+.hyperlink {
+  color: #007D7D;
+  text-align: right;
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: none; /*去除底線*/
+}
+
+.checkbox-label {
+  display: flex;
+  gap: 0px;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgb(96, 98, 98);
+}
+
+.checkbox-label input {
+  margin-left: 0px; /* 設置勾選框的左邊距 */
+  margin-top: 10px; /* 設置勾選框的其餘邊距 */
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 15px; /* 設置勾選框的寬度 */
+  height: 15px; /* 設置勾選框的高度 */
+}
+
+.text-center {
+  text-align: center;
+}
+
+.quantico-regular {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.quantico-bold {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #C8685C;
+}
+
+.quantico-regular-italic {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.quantico-bold-italic {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
