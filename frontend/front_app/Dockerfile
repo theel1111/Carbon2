@@ -12,7 +12,6 @@ RUN npm install
 # 複製應用程式中的所有檔案到容器中
 COPY . .
 
-
 RUN npm run build
 
 RUN npm install -g serve

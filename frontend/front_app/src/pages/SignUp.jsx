@@ -23,14 +23,14 @@ export default function SignUpPage() {
       <div className={styles["signup-right"]}>
         <form onSubmit={handleSignUp} className={styles["signup-form"]}>
           <h2 className={styles["form-title"]}>Create your account</h2>
-          <label className={styles["form-label"]}>Username</label>
+          <label className={styles["text"]}>Username</label>
           <input
             type="text"
             className={styles["form-input"]}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <label className={styles["form-label"]}>Password</label>
+          <label className={styles["text"]}>Password</label>
           <div className={styles["password-container"]}>
             <input
               type={showPassword ? "text" : "password"}
@@ -46,21 +46,22 @@ export default function SignUpPage() {
               {showPassword ? "🙈" : "👁️"}
             </button>
           </div>
-          <div className={styles["checkbox-container"]}>
-            <label>
-              <input type="checkbox" className={styles["checkbox"]} />
-              I agree to the terms of service and privacy policy
+          <div className="mt-2">
+            <label className={styles["checkbox-label"]}>
+                <input type="checkbox" />
+                    I agree to the terms of service and privacy policy
             </label>
-          </div>
+            </div>
           <button type="submit" className={styles["signup-button"]}>
             Sign up
           </button>
           <div className={styles["divider"]}>
-            <span>or sign in with</span>
+            <span>--------------------------    or sign in with    --------------------------</span>
           </div>
-          <button className={styles["google-login-button"]}>
-            <img src="/assets/google-logo.png" alt="Google" className={styles["google-logo"]} />
-          </button>
+          <button
+                className={styles["google-login-button"]}>
+                <img src="/assets/images.png" className={styles["logo"]}/> Google
+            </button>
           <p className={styles["already-account"]}>
             Already have an account? <a href="/login" className={styles["signin-link"]}>Sign in</a>
           </p>
