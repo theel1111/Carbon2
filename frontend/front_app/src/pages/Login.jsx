@@ -24,9 +24,7 @@ export default function LoginPage() {
             </p>
             <label className={styles["text"]}>
                 New here?
-                <a href="#" className={styles["hyperlink"]}>
-                    Create an account.
-                </a>
+                    <a href="/signup" className={styles["hyperlink"]}>Create an account.</a>
             </label>
             <label className={styles["text"]}>
                     Username

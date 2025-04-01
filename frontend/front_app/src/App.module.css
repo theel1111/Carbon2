@@ -153,16 +153,18 @@ label {
 .signup-container {
   display: flex;
   height: 100vh;
-  background-color: #f5f5f5;
+  background-color: #D9D9D9;
+  padding: 50px;
 }
 
 /* Left Section */
 .signup-left {
   flex: 1;
-  background-color: #e8e8e8;
+  background-color: #D7D2CC;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 20px 0 0 20px;
 }
 
 .brand-logo {
@@ -174,9 +176,9 @@ label {
 /* Right Section */
 .signup-right {
   flex: 1;
-  background-color: #fff;
+  background-color: #F5F2ED;
   padding: 40px;
-  border-radius: 20px 0 0 20px;
+  border-radius: 20px 20px 20px 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -246,19 +248,8 @@ label {
   text-align: center;
   margin: 20px 0;
   font-size: 14px;
-  color: #aaa;
-}
-
-.google-login-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 10px;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
+  font-weight: 700;
+  color: #959898;
 }
 
 .google-logo {
@@ -268,12 +259,15 @@ label {
 
 .already-account {
   text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
+  font-size: 10px;
+  margin-top: 1px;
+  font-weight: 700;
+  color: #959898;
 }
 
 .signin-link {
-  color: #007d7d;
+  font-weight: 700;
+  color: #FF8C7A;
   text-decoration: none;
 }
 
