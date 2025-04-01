@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Channel } from './Component/Channel/channel';
-import  Login  from './pages/Login';
+import Login from './pages/Login';
 import Home from "./pages/Home";
 import SignUp from './pages/SignUp';
 import './App.module.css';
@@ -24,13 +24,15 @@ function App() {
   }, [isLoggedIn]);
 
   return (
-    <div className="App">
-      {isLoggedIn ? (
-        <Channel data={initialState} />
-      ) : (
-        <Login onLogin={setIsLoggedIn} />
-      )}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={
+          isLoggedIn ? <Navigate to="/home" /> : <Login onLogin={setIsLoggedIn} />
+        } />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 
