@@ -1,13 +1,23 @@
-#containers that we have
-services: 
+# version: "3.8"
+
+services:
   backend:
+    restart: "no"
     build: ./backend
     ports:
-    - 5000:5000
+      - "80:5000"
     volumes:
-    - ./backend:/app
+      - ./backend:/app
     environment: 
       FLASK_ENV: development
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3307
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+      MYSQL_DB: mydatabase
+    depends_on:
+      - mysql
+      
 
   frontend:
     build: 
@@ -16,6 +26,23 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./frontend/front_app:/src/app
+      - ./frontend/front_app:/user/src/app
+
     depends_on:
       - backend
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
