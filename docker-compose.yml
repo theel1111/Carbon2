@@ -1,8 +1,7 @@
-# version: "3.8"
-
 services:
+
   backend:
-    restart: "no"
+    restart: "always" 
     build: ./backend
     ports:
       - "80:5000"
@@ -16,9 +15,9 @@ services:
       MYSQL_PASSWORD: mypassword
       MYSQL_DB: mydatabase
     depends_on:
-      - mysql
-      
-
+      mysql:
+        condition: service_healthy
+    
   frontend:
     build: ./frontend/front_app
     ports:
@@ -27,19 +26,23 @@ services:
       - ./frontend/front_app:/user/src/app
     depends_on:
       - backend
+      #- healthy # check the condition could be other then 
 
   mysql:
-    image: mysql:latest
+    image: mysql  
     container_name: mysql-container
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: mydatabase
-      MYSQL_USER: myuser
-      MYSQL_PASSWORD: mypassword
+    env_file: 
+      - ./.env  # Loading environment variables like passwords and user info
     ports:
-      - "3307:3306"
+      - "3307:3306"  # Mapping port 3306 of the container to port 3307 on the host
     volumes:
-      - mysql-data:/var/lib/mysql
+      - mysql-data:/var/lib/mysql # Persisting MySQL data across container restarts
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pexample"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
 
 volumes:
   mysql-data:
