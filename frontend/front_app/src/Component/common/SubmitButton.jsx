@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "../App.module.css";
+import styles from "../../App.module.css";
 
 const SubmitButton = ({ text }) => {
   return (
-    <button type="submit" className={styles["login-page-button"]}>
+    <button type="submit" className={styles["submit-button"]}>
       {text}
     </button>
   );

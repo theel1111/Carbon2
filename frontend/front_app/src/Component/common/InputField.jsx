@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../App.module.css";
+import styles from "../../App.module.css";
 
 const InputField = ({ label, type, value, onChange }) => {
   return (
@@ -7,7 +7,7 @@ const InputField = ({ label, type, value, onChange }) => {
       <label className={styles["text"]}>{label}</label>
       <input
         type={type}
-        className={styles["login-page input"]}
+        className={styles["form-input"]}
         value={value}
         onChange={onChange}
       />

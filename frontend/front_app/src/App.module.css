@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 20px;
   height: 100vh;
   background-color: #D7D2CC;
   border: 10px solid #F7F3F0;
@@ -20,22 +20,12 @@
   display: flex;
   flex-direction: column;
   background-color: #F5F2ED;
-  width: 90%;
+  width: 300px;
   max-width: 600px;
-  padding: 20px;
-}
-
-.login-page input {
-  width: 100%;
   padding: 10px;
-  margin: 0;
-  font-size: 16px;
-  border: 1px solid #b6baba;
-  border-radius: 5px;
-  box-sizing: border-box; /* 確保內邊距和邊框包含在寬度內 */
 }
 
-.login-page-button {
+.submit-button {
   padding: 10px;
   font-size: 16px;
   width: 100%;
@@ -186,7 +176,7 @@ label {
 }
 
 .signup-form {
-  max-width: 400px;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -205,7 +195,7 @@ label {
 .form-input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
@@ -224,33 +214,29 @@ label {
   font-size: 16px;
 }
 
-.checkbox-container {
-  margin-bottom: 20px;
-}
-
 .checkbox {
   margin-right: 10px;
 }
 
-.signup-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007d7d;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.signup-button:hover {
-  background-color: #005f5f;
-}
-
 .divider {
+  display: flex;
+  align-items: center;
   text-align: center;
-  margin: 20px 0;
-  font-size: 14px;
+  /* margin: 20px 0; */
+  margin: 1em 0;
+  font-weight: 700;
+  color: #959898;
+}
+
+.divider .line {
+  flex: 1;
+  height: 1px;
+  background-color: #959898;
+}
+
+.divider .text {
+  font-size: 10px;
+  margin-top: 1px;
   font-weight: 700;
   color: #959898;
 }
