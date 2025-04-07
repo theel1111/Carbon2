@@ -1,4 +1,10 @@
+##########################################################################
+##  Base image: use the official Python image from Docker Hub           ##
+## Use the latest version of Python 3.13 slim image                     ##
+## This image is smaller and contains only the necessary components     ##
+##########################################################################
 FROM python:3.13-slim
+
 
 # Install build dependencies for mysqlclient
 RUN apt-get update && apt-get install -y \
@@ -11,6 +17,9 @@ RUN apt-get update && apt-get install -y \
 # Set the working directory inside the created image
 WORKDIR /app
 
+# Set Environment Variables
+# Tells Flask what the main application file is (app)
+# Sets the environment mode to development, enabling features like hot-reloading for easier development. 
 ENV FLASK_APP=app.py \
     FLASK_ENV=development
 
