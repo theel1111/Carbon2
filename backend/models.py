@@ -20,6 +20,14 @@ class User(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
+    # Method to set password securely
+    def set_password(self, password):
+        self.password = generate_password_hash(password)
+
+    # Method to check password securely
+    def check_password(self, password):
+        return check_password_hash(self.password, password)
+    
 class Project(db.Model):
     __tablename__ = 'Project'
     project_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -98,6 +106,6 @@ class Report(db.Model):
     __tablename__ = 'Report'
     report_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     report_name = db.Column(db.String(255))
-    cfv_id = db.Column(db.Integer, db.ForeignKey('CFV.cfv_id'))
+    cfv_id = db.Column(db.Integer, db.ForeignKey('CF_Result.cf_id'))
     user_id = db.Column(db.Integer, db.ForeignKey('User.user_id'))
     created_time = db.Column(db.DateTime, default=datetime.utcnow)
