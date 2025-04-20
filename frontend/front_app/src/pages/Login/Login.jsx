@@ -1,14 +1,14 @@
 import React from "react";
-import styles from "../App.module.css";
-import LoginHeader from "../Component/Login/LoginHeader";
-import Form from "../Component/Login/LoginForm";
+import styles from "../../App.module.css";
+import LoginHeader from "./LoginHeader";
+import LoginForm from "./LoginForm";
 
 export default function LoginPage() {
   return (
     <div className={styles["login-page"]}>
         <div className={styles["login-page form"]}>
             <LoginHeader/>
-            <Form/>
+            <LoginForm/>
         </div>
     </div>
   );

@@ -1,9 +1,9 @@
 import {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 // import { Channel } from './Component/Channel/channel';
-import Login from './pages/Login';
+import Login from './pages/Login/Login';
 import Home from "./pages/Home";
-import SignUp from './pages/SignUp';
+import SignUp from './pages/SignUp/SignUp';
 import './App.module.css';
 
 function App() {

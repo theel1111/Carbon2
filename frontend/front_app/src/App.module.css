@@ -195,7 +195,7 @@ label {
 .form-input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
@@ -262,4 +262,16 @@ label {
 
 .signin-link:hover {
   text-decoration: underline;
+}
+
+.error {
+  color: #b04d4d;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 0px;
+}
+
+.reportType {
+  height: 50px;
+  margin-right: 10px;
 }

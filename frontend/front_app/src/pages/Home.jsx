@@ -1,8 +1,19 @@
 // src/pages/Home.jsx
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Home.module.css";
+import CarbonReportModal from '../Component/common/CarbonReportModal';
 
 const Home = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const surveyData = {
+    surveyId: 'CARBON-20240420',
+    surveyName: '公司年度碳排盤查'
+  };
+  const handleDownload = (data) => {
+    console.log('要下載的資料：', data);
+    alert(`下載報表類型：${data.reportType}\n編號：${data.surveyId}\n名稱：${data.surveyName}`);
+  };
+
   return (
     <div className={styles.container}>
       {/* 側邊欄 */}
@@ -59,6 +70,14 @@ const Home = () => {
           <div className={styles.rightColumn}>
             <div className={styles.recordTable}>
               <h3>盤查紀錄</h3>
+              <div className="p-8">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="bg-blue-500 text-white px-4 py-2 rounded-lg"
+                >
+                  產生碳盤查報表
+                </button>
+              </div>
               <table>
                 <thead>
                   <tr>
@@ -81,6 +100,12 @@ const Home = () => {
           </div>
         </section>
       </main>
+      <CarbonReportModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        surveyData={surveyData}
+        onDownload={handleDownload}
+      />
     </div>
   );
 };
