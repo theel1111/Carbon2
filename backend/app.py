@@ -5,6 +5,8 @@ from flask_jwt_extended import JWTManager
 from models import db  # import db from models
 from auth import auth_bp
 from product_api import product_bp
+from carbonFootprint import carbon_bp
+
 
 app = Flask(__name__)
 
@@ -23,6 +25,8 @@ jwt = JWTManager(app)  # Sets up JWT-based login and access control.
 # Register blueprints
 app.register_blueprint(auth_bp)
 app.register_blueprint(product_bp)
+app.register_blueprint(carbon_bp)
+
 
 @app.route('/')
 def index():
