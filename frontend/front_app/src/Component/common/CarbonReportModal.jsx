@@ -32,7 +32,7 @@ export default function CarbonReportModal({ isOpen, onClose, onDownload, surveyD
             {/* 報表類型選擇 */}
             <div className="flex justify-around items-center mb-6">
                 {[
-                    { type: '環保署', img: "/assets/epd.png" },
+                    { type: '環境部', img: "/assets/epd.png" },
                     { type: '金管會', img: "/assets/fsc.png" },
                     { type: '自選設定', img: "/assets/filter.png"}
                 ].map(({type, img}) => (

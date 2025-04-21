@@ -26,11 +26,14 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={
+        <Route path="/login" element={
           isLoggedIn ? <Navigate to="/home" /> : <Login onLogin={setIsLoggedIn} />
         } />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/home" element={<Home />} />
+
+        {/* 預設導向到 login */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
       </Routes>
     </Router>
   );
