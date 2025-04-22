@@ -1,24 +1,11 @@
 // src/pages/Home.jsx
 import React from "react";
 import styles from "./Home.module.css";
+import SidebarLayout from "../Component/Layout/SidebarLayout";
 
 const Home = () => {
   return (
-    <div className={styles.container}>
-      {/* 側邊欄 */}
-      <aside className={styles.sidebar}>
-        <div className={styles.logo}>LOGO</div>
-        <nav className={styles.nav}>
-          <button className={styles.active}>Home</button>
-          <button>Record</button>
-          <button>Record</button>
-          <button>Record</button>
-          <button>權限管理</button>
-          <button>進度查核</button>
-        </nav>
-        <button className={styles.logout}>Logout</button>
-      </aside>
-
+    <SidebarLayout>
       {/* 主要內容 */}
       <main className={styles.main}>
         {/* 上方：用 flex 展示 圖表 + 碳足跡 */}
@@ -81,7 +68,7 @@ const Home = () => {
           </div>
         </section>
       </main>
-    </div>
+    </SidebarLayout>
   );
 };
 
