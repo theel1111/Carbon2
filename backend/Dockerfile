@@ -1,8 +1,3 @@
-##########################################################################
-##  Base image: use the official Python image from Docker Hub           ##
-## Use the latest version of Python 3.13 slim image                     ##
-## This image is smaller and contains only the necessary components     ##
-##########################################################################
 FROM python:3.13-slim
 
 
@@ -35,7 +30,7 @@ RUN pip install Flask-Migrate
 COPY . .
 
 # Expose the port Flask runs on
-EXPOSE 5000
+EXPOSE 5001
 
 # Run app.py when the container launches
 CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
