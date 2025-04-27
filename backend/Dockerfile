@@ -1,5 +1,6 @@
 FROM python:3.13-slim
 
+
 # Install build dependencies for mysqlclient
 RUN apt-get update && apt-get install -y \
     pkg-config \
@@ -11,6 +12,9 @@ RUN apt-get update && apt-get install -y \
 # Set the working directory inside the created image
 WORKDIR /app
 
+# Set Environment Variables
+# Tells Flask what the main application file is (app)
+# Sets the environment mode to development, enabling features like hot-reloading for easier development. 
 ENV FLASK_APP=app.py \
     FLASK_ENV=development
 
@@ -26,7 +30,7 @@ RUN pip install Flask-Migrate
 COPY . .
 
 # Expose the port Flask runs on
-EXPOSE 5000
+EXPOSE 5001
 
 # Run app.py when the container launches
 CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
