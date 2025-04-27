@@ -1,0 +1,25 @@
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 180px;
+    background: #f5f2ed;
+    border-radius: 15px 0 0 15px;
+    padding-top: 20px;
+  }
+  
+  .item {
+    padding: 12px 24px;
+    cursor: pointer;
+    color: #222;
+  }
+  
+  .item:hover {
+    background: #e7e3dc;
+  }
+  
+  .active {
+    color: #d16455;
+    font-weight: 700;
+  }
+  
