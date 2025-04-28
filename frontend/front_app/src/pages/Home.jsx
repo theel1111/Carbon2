@@ -2,21 +2,18 @@
 import React, { useState } from "react";
 import styles from "./Home.module.css";
 import CarbonReportModal from '../Component/common/CarbonReportModal';
-
+import handleDownload from '../Component/common/DownloadReport';
+import SidebarLayout from '../Component/Layout/SidebarLayout';
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const surveyData = {
     surveyId: 'CARBON-20240420',
     surveyName: '公司年度碳排盤查'
   };
-  const handleDownload = (data) => {
-    console.log('要下載的資料：', data);
-    alert(`下載報表類型：${data.reportType}\n編號：${data.surveyId}\n名稱：${data.surveyName}`);
-  };
-
   return (
-    <div className={styles.container}>
-      {/* 側邊欄 */}
+    <SidebarLayout>
+    {/* <div className={styles.container}> */}
+      {/* 側邊欄
       <aside className={styles.sidebar}>
         <div className={styles.logo}>LOGO</div>
         <nav className={styles.nav}>
@@ -28,7 +25,7 @@ const Home = () => {
           <button>進度查核</button>
         </nav>
         <button className={styles.logout}>Logout</button>
-      </aside>
+      </aside> */}
 
       {/* 主要內容 */}
       <main className={styles.main}>
@@ -71,12 +68,12 @@ const Home = () => {
             <div className={styles.recordTable}>
               <h3>盤查紀錄</h3>
               <div className="p-8">
-                <button
+                {/* <button
                   onClick={() => setIsModalOpen(true)}
                   className="bg-blue-500 text-white px-4 py-2 rounded-lg"
                 >
                   產生碳盤查報表
-                </button>
+                </button> */}
               </div>
               <table>
                 <thead>
@@ -100,13 +97,13 @@ const Home = () => {
           </div>
         </section>
       </main>
-      <CarbonReportModal
+      {/* <CarbonReportModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         surveyData={surveyData}
         onDownload={handleDownload}
-      />
-    </div>
+      /> */}
+    </SidebarLayout>
   );
 };
 

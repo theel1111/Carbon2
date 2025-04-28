@@ -1,9 +1,10 @@
 Flask==2.2.3
-Flask-MySQLdb==2.0.0
-mysql-connector-python==8.0.29
+# Flask-SQLAlchemy
+mysql-connector-python
+mysqlclient==2.1.0
+Flask-JWT-Extended
 werkzeug==2.2.3
 Flask-Migrate==3.1.0
-mysqlclient
-flask-jwt-extended
-pymysql
-cryptography
+bcrypt
+
+

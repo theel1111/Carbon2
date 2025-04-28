@@ -1,6 +1,7 @@
 // import React, { useState } from "react";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import styles from "../../App.module.css";
 import InputField from "../../Component/common/InputField";
 import CheckboxField from "../../Component/common/CheckboxField";
@@ -9,10 +10,15 @@ import SocialLogin from "../Login/SocialLogin";
 
 
 const SignupForm = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: {errors, isValid} } = useForm({
+        mode: "onChange" // onChange時就驗證
+    });
+    
+    const navigate = useNavigate(); // useNavigate hook to programmatically navigate
     
     const onSubmit = (data) => {
         console.log(data);
+        navigate("/"); // Redirect to the signin page after successful signup
     };
 
     return (
@@ -45,7 +51,10 @@ const SignupForm = () => {
                 label="Remember this device"
                 {...register("remember")}
             />
-            <SubmitButton text="Sign up" />
+            <SubmitButton 
+                text="Sign up"
+                disabled={!isValid} // Disable the button if the form is not valid
+            />
             <SocialLogin />
             <p className={styles["already-account"]}>
                 Already have an account? <a href="/" className={styles["signin-link"]}>Sign in</a>

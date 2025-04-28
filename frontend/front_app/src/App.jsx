@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Login from './pages/Login/Login';
 import Home from "./pages/Home";
 import SignUp from './pages/SignUp/SignUp';
+import CFActivityForm from "./pages/CFActivity/CFActivityForm";
+import ProductList from "./pages/Product/ProductList";
 import './App.module.css';
 
 function App() {
@@ -31,7 +33,9 @@ function App() {
         } />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/home" element={<Home />} />
-
+        <Route path="/cf-activity" element={<CFActivityForm />} />
+        <Route path="/product" element={<ProductList />} />
+        
         {/* 預設導向到 login */}
         <Route path="/" element={<Navigate to="/login" replace />} />
       </Routes>

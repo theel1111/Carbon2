@@ -1,6 +1,7 @@
 // import React, { useState } from "react";
 import React from "react";
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import styles from "../../App.module.css";
 import InputField from "../../Component/common/InputField";
 import CheckboxField from "../../Component/common/CheckboxField";
@@ -9,9 +10,11 @@ import SocialLogin from "./SocialLogin";
 
 const LoginForm = () => {
     const { register, handleSubmit, formState:{ errors } } = useForm();
+    const navigate = useNavigate(); 
 
     const onSubmit = (data) => {
         console.log(data);
+        navigate("/home");
     };
 
     return (

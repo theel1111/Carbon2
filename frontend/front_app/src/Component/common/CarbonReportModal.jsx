@@ -8,7 +8,7 @@ export default function CarbonReportModal({ isOpen, onClose, onDownload, surveyD
 
   if (!isOpen) return null;
 
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     if (!selectedType) {
       alert('請先選擇報表種類！');
       return;
@@ -18,9 +18,14 @@ export default function CarbonReportModal({ isOpen, onClose, onDownload, surveyD
       surveyId: surveyData.surveyId, 
       surveyName: surveyData.surveyName 
     };
-    onDownload(finalData);
-    setSelectedType(null);
-    onClose();
+    try {
+        await onDownload(finalData);
+        setSelectedType(null);
+        onClose(); 
+    } catch (error) {
+        console.error('下載報表時發生錯誤:', error);
+        alert('下載報表失敗，請稍後再試。');
+    }
   };
 
   return (
@@ -30,7 +35,7 @@ export default function CarbonReportModal({ isOpen, onClose, onDownload, surveyD
             <h2 className="text-center text-xl font-bold mb-6">產生碳盤查報表？</h2>
 
             {/* 報表類型選擇 */}
-            <div className="flex justify-around items-center mb-6">
+            <div className={styles.buttonGroup}>
                 {[
                     { type: '環境部', img: "/assets/epd.png" },
                     { type: '金管會', img: "/assets/fsc.png" },

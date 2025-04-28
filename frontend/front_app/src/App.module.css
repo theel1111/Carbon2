@@ -141,6 +141,11 @@ label {
   font-weight: 700;
   font-style: italic;
 }
+.buttonGroup {
+  display: flex;
+  justify-content: left;
+  gap: 20px;
+}
 
 /* Container */
 .signup-container {
